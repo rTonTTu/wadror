@@ -257,3 +257,153 @@ Processing by BreweriesController#index as HTML
 Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.3ms)
   [1m[36mBrewery Load (5.4ms)[0m  [1mSELECT "breweries".* FROM "breweries"[0m
   [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "breweries"
+  [1m[36mBrewery Load (0.8ms)[0m  [1mSELECT "breweries".* FROM "breweries"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "breweries"
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (14.2ms)[0m  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Sun, 18 Jan 2015 14:36:24 UTC +00:00], ["name", "Stadin Panimo"], ["updated_at", Sun, 18 Jan 2015 14:36:24 UTC +00:00], ["year", 1997]]
+  [1m[36m (33.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mBrewery Load (1.3ms)[0m  SELECT "breweries".* FROM "breweries"
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Sun, 18 Jan 2015 14:37:00 UTC +00:00], ["name", "Weihenstephan"], ["updated_at", Sun, 18 Jan 2015 14:37:00 UTC +00:00], ["year", 1042]]
+  [1m[36m (15.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/breweries" for 127.0.0.1 at 2015-01-18 16:38:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries"
+  Rendered breweries/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 326ms (Views: 231.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-18 16:38:09 +0200
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-18 16:38:09 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-18 16:38:09 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-18 16:38:09 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-18 16:38:09 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-18 16:38:09 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-18 16:38:09 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-18 16:38:09 +0200
+  [1m[35mBrewery Load (2.4ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBrewery Load (0.7ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mBrewery Load (0.9ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Koff' LIMIT 1
+  [1m[36mBrewery Load (1.3ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Hartwall' LIMIT 1[0m
+  [1m[35mBrewery Load (1.4ms)[0m  SELECT "breweries".* FROM "breweries" WHERE ("breweries"."year" BETWEEN 1600 AND 2000)
+  [1m[36mBrewery Load (1.1ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE (year<1900)[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "breweries" WHERE (year<1900)
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Kumpulan panimo' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 18 Jan 2015 14:44:09 UTC +00:00], ["name", "Kumpulan panimo"], ["updated_at", Sun, 18 Jan 2015 14:44:09 UTC +00:00], ["year", 2012]]
+  [1m[35m (19.7ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36mBrewery Load (5.7ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Kumpulan panimo' LIMIT 1[0m
+  [1m[35mBrewery Load (1.1ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Kumpulan panimo' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (18.0ms)[0m  UPDATE "breweries" SET "year" = ?, "updated_at" = ? WHERE "breweries"."id" = 6  [["year", 2015], ["updated_at", Sun, 18 Jan 2015 14:45:15 UTC +00:00]]
+  [1m[36m (37.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mBrewery Load (1.2ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Kumpulan panimo' LIMIT 1
+  [1m[36mBrewery Load (1.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Kumpulan panimo' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mSQL (18.1ms)[0m  [1mDELETE FROM "breweries" WHERE "breweries"."id" = ?[0m  [["id", 6]]
+  [1m[35m (9.8ms)[0m  commit transaction
+  [1m[36mBrewery Load (1.4ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Kumpulan panimo' LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mBrewery Load (1.1ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'Kumpulan panimo' LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBeers (20150118145130)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "beers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "style" varchar(255), "brewery_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (9.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150118145130"]]
+  [1m[36m (40.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/breweries" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries"
+  Rendered breweries/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 357ms (Views: 351.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:12 +0200
+
+
+Started GET "/breweries" for 127.0.0.1 at 2015-01-18 16:54:13 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.3ms)[0m  [1mSELECT "breweries".* FROM "breweries"[0m
+  Rendered breweries/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-18 16:54:13 +0200
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-18 16:54:14 +0200
