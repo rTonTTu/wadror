@@ -1,0 +1,259 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-18 15:19:56 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/wadror/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/railties-4.0.2/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 60ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-18 15:25:51 +0200
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'bin/rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.2) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.2) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__342106564__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/wadror/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/wadror/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/wadror/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/wadror/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/wadror/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/wadror/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/wadror/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.3ms)
+  [1m[36m (16.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (10.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBreweries (20150118132439)
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "breweries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "year" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150118132439"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/breweries" for 127.0.0.1 at 2015-01-18 15:26:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries"
+  Rendered breweries/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 456ms (Views: 427.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-18 15:26:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-18 15:26:35 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-18 15:26:35 +0200
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-18 15:26:35 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-18 15:26:35 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-18 15:26:35 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-18 15:26:35 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-18 15:26:35 +0200
+
+
+Started GET "/breweries/new" for 127.0.0.1 at 2015-01-18 15:26:46 +0200
+Processing by BreweriesController#new as HTML
+  Rendered breweries/_form.html.erb (87.8ms)
+  Rendered breweries/new.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 118ms (Views: 116.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/breweries" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+Processing by BreweriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ItHlqkHIfu0fALb4leDrgYi5aGh90Iq4IJXRrgHNArE=", "brewery"=>{"name"=>"Hartwall", "year"=>"1836"}, "commit"=>"Create Brewery"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Sun, 18 Jan 2015 13:27:09 UTC +00:00], ["name", "Hartwall"], ["updated_at", Sun, 18 Jan 2015 13:27:09 UTC +00:00], ["year", 1836]]
+  [1m[36m (69.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/breweries/1
+Completed 302 Found in 123ms (ActiveRecord: 79.3ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered breweries/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:09 +0200
+
+
+Started GET "/breweries" for 127.0.0.1 at 2015-01-18 15:27:13 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries"[0m
+  Rendered breweries/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/breweries/new" for 127.0.0.1 at 2015-01-18 15:27:14 +0200
+Processing by BreweriesController#new as HTML
+  Rendered breweries/_form.html.erb (1.3ms)
+  Rendered breweries/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/breweries" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+Processing by BreweriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ItHlqkHIfu0fALb4leDrgYi5aGh90Iq4IJXRrgHNArE=", "brewery"=>{"name"=>"Sinebrychoff", "year"=>"1819"}, "commit"=>"Create Brewery"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 18 Jan 2015 13:27:22 UTC +00:00], ["name", "Sinebrychoff"], ["updated_at", Sun, 18 Jan 2015 13:27:22 UTC +00:00], ["year", 1819]]
+  [1m[35m (23.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/breweries/2
+Completed 302 Found in 35ms (ActiveRecord: 24.7ms)
+
+
+Started GET "/breweries/2" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered breweries/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:22 +0200
+
+
+Started GET "/breweries" for 127.0.0.1 at 2015-01-18 15:27:24 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries"
+  Rendered breweries/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/breweries/new" for 127.0.0.1 at 2015-01-18 15:27:25 +0200
+Processing by BreweriesController#new as HTML
+  Rendered breweries/_form.html.erb (1.3ms)
+  Rendered breweries/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/breweries" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+Processing by BreweriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ItHlqkHIfu0fALb4leDrgYi5aGh90Iq4IJXRrgHNArE=", "brewery"=>{"name"=>"Warsteiner", "year"=>"1753"}, "commit"=>"Create Brewery"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Sun, 18 Jan 2015 13:27:48 UTC +00:00], ["name", "Warsteiner"], ["updated_at", Sun, 18 Jan 2015 13:27:48 UTC +00:00], ["year", 1753]]
+  [1m[36m (23.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/breweries/3
+Completed 302 Found in 32ms (ActiveRecord: 24.1ms)
+
+
+Started GET "/breweries/3" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mBrewery Load (0.1ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered breweries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-18 15:27:48 +0200
+
+
+Started GET "/breweries" for 127.0.0.1 at 2015-01-18 15:27:50 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.3ms)[0m  [1mSELECT "breweries".* FROM "breweries"[0m
+  Rendered breweries/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.3ms)
+  [1m[36mBrewery Load (5.4ms)[0m  [1mSELECT "breweries".* FROM "breweries"[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "breweries"
